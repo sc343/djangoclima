@@ -15,7 +15,10 @@
         <div class="col-md-6">
           <div class="h-100 p-5 text-white bg-dark rounded-3">
             <h2><strong>Clima:</strong> {{ api.day.1.symbol_description }}</h2>
-            <p><strong>Locación:</strong> {{ api.location }},<strong> Fecha:</strong> {{ api.day.1.date }} </p>
+            <p><strong>Locación:</strong> {{ api.location }},<strong> 
+                <br> Fecha:</strong> {{ api.day.1.date.6 }}{{ api.day.1.date.7 }} - {{ api.day.1.date.4 }}{{ api.day.1.date.5 }} -
+                {{ api.day.1.date.0 }}{{ api.day.1.date.1 }}{{ api.day.1.date.2 }}{{ api.day.1.date.3 }}
+            </p>
           </div>
         </div>
         <div class="col-md-6">
