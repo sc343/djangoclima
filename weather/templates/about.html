@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
-<h1> ABOUT </h1>
+<h1><strong>Clima en Maipú </strong><img src="{% static '/weather/images/weather.png' %}" width="200" height="200"></h1>
+<p>Página creada por <strong>Sebastián Cáceres</strong>, usando la API de: <a href="https://www.meteored.cl">www.meteored.cl</a>
+    
+</p>
+
 
 {% endblock %}

@@ -1,7 +1,41 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
-<h1> Hello world ! </h1>
+<h1><center><strong>Clima en Maipú <img src="{% static '/weather/images/weather.png' %}" width="200" height="200"></center></h1></strong>
+
+<br/>
+<br/>
+<br/>
+{% if api %}
+    {% if api == "Error..." %}
+        hubo un error, por favor intente nuevamente
+    {% else %}
+    <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+          <div class="h-100 p-5 text-white bg-dark rounded-3">
+            <h2><strong>Clima:</strong> {{ api.day.1.symbol_description }}</h2>
+            <p><strong>Locación:</strong> {{ api.location }},<strong> Fecha:</strong> {{ api.day.1.date }} </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+            <div class="h-100 p-5 bg-light border rounded-3">
+              <h2></h2>
+              <p><strong>Humedad:</strong> {{ api.day.1.humidity }}
+                <br>
+            <strong>Temperatura minima:</strong> {{ api.day.1.tempmin }}°
+                <br>
+            <strong> Temperatura maxima:</strong> {{ api.day.1.tempmax }}°
+                <br>
+            <strong> Lluvia: </strong>{{ api.day.1.rain }}
+                <br>
+            <strong> Presión:</strong> {{ api.day.1.pressure }}</p>
+            </div>
+          </div>
+        </div>
+        
+    {% endif %}    
+
+{% endif %}
 
 {% endblock %}
